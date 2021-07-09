@@ -31,7 +31,7 @@ def main():
         print("*" * 31 + "MAIN MENU" + "*" * 32 + "\n"     #"*" * 31 means, write (*) 31 times.
               "\n(O) ORDERMEAL   (R) REPORT (C) CANCEL  (P) PAY (E) EXIT\n" + "_" * 72)
             
-        input1 = str(input("Please Select Your Operation: ")).upper()   #Input to choose operation. Make everything UPPER case. 
+        input1 = str(input("Please Select Your Operation: ")).upper()   #Input to choose operation. Makeeverything UPPER case. 
         if (len(input1) == 1):            #Checking input length.                               
             if (input1 == 'O'):                                          
                 print("\n" * 10)                                        
