@@ -20,7 +20,7 @@ if os.name == "nt":
     
 # create list
     def def_default():
-    global drinks, foods, services, price, list_item_order    
+     global drinks, foods, services, price, list_item_order    
     list_item_order = [0] * 100       #list, length 100. Max index number is 99.Index: 0-39 for foods, index: 40-79 for drinks,Index: 80-99 for other services.
 def_default()                                      
                                             
@@ -40,7 +40,7 @@ def main():
             
             elif (input1 == 'R'):                                        
                 print("\n" * 10)                                        
-               report()           #call the report function.                           
+                report()           #call the report function.                           
                 break
             
             elif (input1 == 'c'):                                        
@@ -63,7 +63,7 @@ def main():
             print("\n" * 10 + "ERROR: Invalid Input (" + str(input1) + "). Try again!") #If input length not equal to 1 then Invalid input error message is displayed.
 
 #Design for ordermeal menu.
- def def_ordermeal():                                            
+def def_ordermeal():                                            
     while True:                                             
         print("*" * 31 + "ORDERS MENU" + "*" * 31 + "\n"     
               "\n(F) FOODS (D)  DRINKS  (s) SERVICES  (C) CANCEL (M) MAIN MENU (E) EXIT\n" + "_" * 72) # ordermeals and services Menu Structure
@@ -80,7 +80,7 @@ def main():
                 drinksmenu() # Show drinks Menu
                 break
             
-             elif (input1 == 'c'):                                        
+            elif (input1 == 'c'):                                        
                 print("\n" * 10)
                 cancelorder()   #call the cancelorder function.                                  
                 break
@@ -105,15 +105,15 @@ def main():
             print("\n" * 10 + "ERROR: Invalid Input (" + str(input2) + "). Try again!")
             
 # foods menu.             
-  def foodmenu():
-    while True:
+    def foodmenu():
+     while True:
             print("*" * 26 + "ORDER FOODS" + "*" * 26)
             print(" |NO| |FOOD NAME|         |PRICE|") #  foods Menu Structure
             foodmenu = open('files'+navigator_symbol+'foods.fsd', 'r').read() 
-        print(foodmenu)
+    print(foodmenu)
 
-            i = 0
-            while i < len(foods):
+    i = 0
+    while i < len(foods):
                 var_space = 1
                 if i <= 8:                     
                     var_space = 2
@@ -125,38 +125,38 @@ def main():
                 print(food)
                 i += 1
 
-            print("\n (M) MAIN MENU  (D)  DRINKS (s) SERVICES (C) CANCEL (P) PAY (E) EXIT\n" + "_" * 72)
+    print("\n (M) MAIN MENU  (D)  DRINKS (s) SERVICES (C) CANCEL (P) PAY (E) EXIT\n" + "_" * 72)
 
-            input1 = input("Please Select Your Operation: ").upper() 
-            if (input1 == 'M'):
+    input1 = input("Please Select Your Operation: ").upper() 
+    if (input1 == 'M'):
                 print("\n" * 10)
                 main() # call main function.
-                break
+    break
             
-             elif (input1 == 'D'):
-                print("\n" * 10)
-                drinksmenu() # Show drinks Menu
-                break
+    elif (input1 == 'D'):
+    print("\n" * 10)
+    drinksmenu() # Show drinks Menu
+            break
             
             elif (input1 == 'S'):
-                print("\n" * 10)
-                services() # Show Services Menu
-                break
+            print("\n" * 10)
+            services() # Show Services Menu
+            break
             
-             elif (input1 == 'c'):                                        
-                print("\n" * 10)
-                cancelorder()  #call the cancelorder function.                                  
-                break
+            elif (input1 == 'c'):                                        
+            print("\n" * 10)
+            cancelorder()  #call the cancelorder function.                                  
+break
             
             elif (input1 == 'P'):
-                print("\n" * 10)
-                pay() # Handling payment call pay function.
-                break
+            print("\n" * 10)
+            pay() # Handling payment call pay function.
+            break
             
             else (input1 == 'E'):
-                print("*" * 32 + "THANK YOU AND COME AGAIN " + "*" * 31 + "\n")
-                break
-try: # encapsulate errors  with try/except
+            print("*" * 32 + "THANK YOU AND COME AGAIN " + "*" * 31 + "\n")
+            break
+            try: # encapsulate errors  with try/except
 input2 = input("no of orders ").upper() 
     if int(input2>=0) and (int(input2)<40)
     list_item_order[int(input1) - 1] += int(input2) 
@@ -170,15 +170,15 @@ input2 = input("no of orders ").upper()
                 print("\n" * 10 + "ERROR: Invalid Input (" + str(input1) + "). Try again!")
                 
 # drinks menu.             
-def drinksmenu():
-    while True:
+    def drinksmenu():
+        while True:
             print("*" * 26 + "ORDER BEVERAGES" + "*" * 26)
             print(" |NO| |DRINKS NAME|         |PRICE|") # drinks Menu Structure
             drinksmenu = open('files'+navigator_symbol+'drinks.fsd', 'r').read() 
         print(drinksmenu)
 
-            i = 0
-            while i < len(drinks):
+        i = 0
+        while i < len(drinks):
                 var_space = 1
                 if i <= 8:                     
                     var_space = 2
@@ -190,38 +190,38 @@ def drinksmenu():
                 print(drinks)
                 i += 1
 
-            print("\n (M) MAIN MENU  (F)  FOODS (s) SERVICES (C) CANCEL (P) PAY (E) EXIT\n" + "_" * 72)
+        print("\n (M) MAIN MENU  (F)  FOODS (s) SERVICES (C) CANCEL (P) PAY (E) EXIT\n" + "_" * 72)
 
-            input1 = input("Please Select Your Operation: ").upper() 
-            if (input1 == 'M'):
+        input1 = input("Please Select Your Operation: ").upper() 
+        if (input1 == 'M'):
                 print("\n" * 10)
                 main() # call main function.
                 break
             
-             elif (input1 == 'F'):
+        elif (input1 == 'F'):
                 print("\n" * 10)
                 foodmenu() # Show foods Menu
                 break
             
-            elif (input1 == 'S'):
+        elif (input1 == 'S'):
                 print("\n" * 10)
                 services() # Show Services Menu
                 break
             
-             elif (input1 == 'c'):                                        
+        elif (input1 == 'c'):                                        
                 print("\n" * 10)
                 cancelorder()  #call the cancelorder function.                                  
                 break
             
-            elif (input1 == 'P'):
+        elif (input1 == 'P'):
                 print("\n" * 10)
                 pay() 
                 break
             
-            else (input1 == 'E'):
+        else (input1 == 'E'):
                 print("*" * 32 + "THANK YOU AND COME AGAIN " + "*" * 31 + "\n")
-                break
-try:
+            break
+    try:
     input2 = input("no of orders ").upper() 
     if int(input2>=40) and (int(input2)<80)
     print("\n" * 10)
@@ -240,7 +240,7 @@ def services():
             print("*" * 29 + "OTHER SERVICES" + "*" * 29)
             print(" |NO| |SERVICE NAME|      |PRICE|")  # Services Menu Structure
             servicesoffered = open('files'+navigator_symbol+'services.fsd', 'r').read() 
-        print(servicesoffered)
+            print(servicesoffered)
 
             i = 0
             while i < len(services):
@@ -263,7 +263,7 @@ def services():
                 main() 
                 break
             
-             elif (input1 == 'c'):                                        
+            elif (input1 == 'c'):                                        
                 print("\n" * 10)
                 cancelorder()                                   
                 break
@@ -273,25 +273,26 @@ def services():
                 pay() 
                 break
             
-            else (input1 == 'E'):
-                print("*" * 32 + "THANK YOU AND COME AGAIN " + "*" * 31 + "\n")
-                break
-try:
-    int(input2)
+            else: (input1 == 'E')
+            print("*" * 32 + "THANK YOU AND COME AGAIN " + "*" * 31 + "\n")
+            break 
+            try:
+
+                int(input2)
     if int(input2>= 80) and (int(input2) < 100):
-    print("\n" * 10)
+        print("\n" * 10)
     print("Service Successfully Ordered!"+ str(list_services[int(input_1) - 81])) # Adding services to orders array 
     list_item_order[int(input_1) - 1] = 1 
     services() # Return services Menu
     break
-    else:
-    print("\n" * 10 + "ERROR: Invalid Input (" + str(input2) + "). Try again!")
-            except:
+else:
+print("\n" * 10 + "ERROR: Invalid Input (" + str(input2) + "). Try again!")
+ except:
                 print("\n" * 10 + "ERROR: Invalid Input (" + str(input1) + "). Try again!")
                 
 # cancel order               
 def cancelorder()
-        while True:
+while True:
         print("*" * 28 + "CALCEL THE ORDER?" + "*" * 24 + "\n") 
         print("\n(O) ORDERMEAL   (R) REPORT (E) EXIT\n" + "_" * 72)
             
@@ -304,12 +305,12 @@ def cancelorder()
             
             elif (input1 == 'R'):                                        
                 print("\n" * 10)                                        
-               report()           #call the report function.                           
-                break
+            report()           #call the report function.                           
+            break
             
             elif (input1 == 'E'):                                        
-                print("*" * 32 + "THANK YOU AND COME AGAIN " + "*" * 31 + "\n")           
-                break
+            print("*" * 32 + "THANK YOU AND COME AGAIN " + "*" * 31 + "\n")           
+            break
             
             else: print ("*" * 32 + "CANCEL THE ORDER" + "*" * 31 + "\n")
 
